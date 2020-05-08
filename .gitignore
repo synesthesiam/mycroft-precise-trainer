@@ -1,0 +1,9 @@
+/data/
+/models/
+/output/
+/pdsounds/
+/.venv/
+/.cache/
+
+__pycache__/
+.ipynb_checkpoints/
