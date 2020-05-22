@@ -1,5 +1,6 @@
 /download/
 /models/
+/data/
 /.venv/
 /.cache/
 /cache/

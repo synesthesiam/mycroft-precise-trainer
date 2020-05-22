@@ -130,8 +130,8 @@ def task_test_examples():
     model_dir = _DIR / pydash.get(_CONFIG, "model_directory", "models")
     wakeword_dir = model_dir / wakeword_id
 
-    src_dir = _DIR / pydash.get(_CONFIG, "testing.wake_words")
-    if not src_dir:
+    src_dir = _DIR / pydash.get(_CONFIG, "testing.wake_words", f"test/{wakeword_id}")
+    if not src_dir or (not src_dir.is_dir()):
         _LOGGER.warning("Not positive test examples provided")
         return
 
@@ -427,7 +427,7 @@ def task_train_incremental():
         "targets": [test_path, model_path],
         "actions": [
             f"precise-train-incremental --epochs {epochs} --random-data-folder '{random_dir}' '{model_path}' '{data_dir}'"
-            + f"&& precise-test '{model_path}' '{data_dir}' > {{targets}}"
+            + f"&& precise-test '{model_path}' '{data_dir}' > {test_path}"
         ],
     }
 
