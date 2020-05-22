@@ -1,0 +1,81 @@
+{
+  "model_directory": "models",
+  "wake_word": {
+    "id": "okay-rhasspy",
+    "text": "okay raspy",
+    "not_wake_words": [
+      "okay raspberry"
+    ]
+  },
+  "training": {
+    "epochs": 1000,
+    "epochs_incremental": 1000
+  },
+  "testing": {
+    "wake_words": "test/okay-rhasspy",
+    "not_wake_words": {
+      "google-speech-commands": {
+        "base_url": "https://github.com/synesthesiam/google-speech-commands/raw/master/",
+        "files": [
+          "cat.tar.gz",
+          "dog.tar.gz"
+        ]
+      }
+    }
+  },
+  "text_to_speech": {
+    "server_url": "http://localhost:5500",
+    "tts_names": [
+      "flite",
+      "festival",
+      "nanotts",
+      "marytts",
+      "mozillatts"
+    ],
+    "voices": [],
+    "languages": [
+      "en"
+    ],
+    "locales": [],
+    "genders": []
+  },
+  "sound_effects": {
+    "rates": [
+      0.75,
+      1.25
+    ],
+    "pitches": [
+      0.75,
+      1.25
+    ],
+    "noises": [
+      0.01,
+      0.025
+    ],
+    "volumes": [
+      0.5,
+      0.75
+    ],
+    "reverb": true
+  },
+  "random_data": {
+    "wav_directory": "data/random",
+    "download_directory": "download",
+    "datasets": {
+      "google-speech-commands": {
+        "base_url": "https://github.com/synesthesiam/google-speech-commands/raw/master/",
+        "files": [
+          "bed.tar.gz",
+          "bird.tar.gz"
+        ]
+      },
+      "public-domain-sounds": {
+        "base_url": "https://github.com/synesthesiam/public-domain-sounds/raw/master/",
+        "files": [
+          "pdsounds-01.tar.gz",
+          "pdsounds-02.tar.gz"
+        ]
+      }
+    }
+  }
+}

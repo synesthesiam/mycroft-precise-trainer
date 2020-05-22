@@ -1,7 +1,5 @@
 FROM ubuntu:eoan
 
-COPY pdsounds /pdsounds
-
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
         python3 python3-pip python3-venv python3-dev \
@@ -17,6 +15,6 @@ COPY fake-sudo /usr/bin/sudo
 RUN cd /mycroft-precise && \
     ./setup.sh
 
-COPY entry.sh train-from-directory.sh /
+COPY entry.sh /
 
 ENTRYPOINT ["/entry.sh"]
