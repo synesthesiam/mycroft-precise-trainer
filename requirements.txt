@@ -1,2 +1,2 @@
 doit==0.32.0
-pydash==4.7.6
+pydash==6.0.0
